@@ -32,13 +32,13 @@ std::string StringOperation::rtrim(const std::string& input)
 	return input.substr(0, input.size()-1);
 }
 
-std::string StringOperation::replace(const std::string& input, char replace_target)
+std::string StringOperation::remove_all(const std::string& input, char remove_target)
 {
 	std::string result;
 
 	for (std::string::size_type i = 0; i < input.size(); i++)
 	{
-		if (input[i] == replace_target)
+		if (input[i] == remove_target)
 			continue;
 		result.push_back(input[i]);
 	}

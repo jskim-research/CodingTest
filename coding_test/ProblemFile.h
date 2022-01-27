@@ -31,12 +31,10 @@ public:
 inline ProblemFile::ProblemFile()
 {
 	num_of_problems = 0;
-	std::cout << "Problem File Construct" << std::endl;
 }
 
 inline ProblemFile::~ProblemFile()
 {
-	std::cout << "Problem File Delete" << std::endl;
 }
 
 
@@ -52,13 +50,11 @@ inline std::vector<std::vector<std::string>> ProblemFile::GetArrays() const
 
 inline ProgrammersFile::ProgrammersFile()
 {
-	std::cout << "ProgrammersFile construct" << std::endl;
 	
 }
 
 inline ProgrammersFile::~ProgrammersFile()
 {
-	std::cout << "ProgrammersFile delete" << std::endl;
 }
 
 inline void ProgrammersFile::ReadFile(std::string file_name)
@@ -77,7 +73,7 @@ inline void ProgrammersFile::ReadFile(std::string file_name)
 			std::vector<std::string> split_string = StringOperation::split(buffer, '\t');
 			for (int i = 0; i < split_string.size(); i++)
 			{
-				std::string s = StringOperation::replace(StringOperation::trim(split_string[i]), ' ');
+				std::string s = StringOperation::remove_all(StringOperation::trim(split_string[i]), ' ');
 				std::vector<std::string> array = StringOperation::split(s, ',');
 				arrays.push_back(array);
 			}

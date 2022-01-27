@@ -1,7 +1,13 @@
-﻿  SolvedProblem.cpp
+﻿  Problem.cpp
+C:\Users\김지수\Documents\Github_VS\coding_test\coding_test\ProblemFile.h(78,22): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  SolvedProblem.cpp
 C:\Users\김지수\Documents\Github_VS\coding_test\coding_test\ProblemFile.h(78,22): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
 C:\Users\김지수\Documents\Github_VS\coding_test\coding_test\SolvedProblem.cpp(19,36): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
 C:\Users\김지수\Documents\Github_VS\coding_test\coding_test\SolvedProblem.cpp(28,30): warning C4018: '<=': signed 또는 unsigned가 일치하지 않습니다.
 C:\Users\김지수\Documents\Github_VS\coding_test\coding_test\SolvedProblem.cpp(46,13): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
 C:\Users\김지수\Documents\Github_VS\coding_test\coding_test\SolvedProblem.cpp(72,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  StringOperation.cpp
+  main.cpp
+C:\Users\김지수\Documents\Github_VS\coding_test\coding_test\ProblemFile.h(78,22): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  코드를 생성하고 있습니다...
   coding_test.vcxproj -> C:\Users\김지수\Documents\Github_VS\coding_test\Debug\coding_test.exe
