@@ -13,7 +13,7 @@ public:
 	virtual ~ProblemFile();
 	size_t GetNumOfProblems() const;
 	std::vector<std::vector<std::string>> GetArrays() const;
-	virtual void ReadFile(std::string file_name) {}
+	virtual void ReadFile(std::string file_name, std::vector<std::string> type) {}
 };
 
 class ProgrammersFile : public ProblemFile
@@ -23,7 +23,7 @@ private:
 public:
 	ProgrammersFile();
 	~ProgrammersFile();
-	void ReadFile(std::string file_name) override;
+	void ReadFile(std::string file_name, std::vector<std::string> type) override;
 };
 
 // template class or inline 인 경우 같은 파일에서 정의까지 해야함.
@@ -57,7 +57,7 @@ inline ProgrammersFile::~ProgrammersFile()
 {
 }
 
-inline void ProgrammersFile::ReadFile(std::string file_name)
+inline void ProgrammersFile::ReadFile(std::string file_name, std::vector<std::string> type)
 {
 	std::fstream ifs;
 	std::string buffer;
@@ -73,8 +73,14 @@ inline void ProgrammersFile::ReadFile(std::string file_name)
 			std::vector<std::string> split_string = StringOperation::split(buffer, '\t');
 			for (int i = 0; i < split_string.size(); i++)
 			{
-				std::string s = StringOperation::remove_all(StringOperation::trim(split_string[i]), ' ');
-				std::vector<std::string> array = StringOperation::split(s, ',');
+ 				std::string s = split_string[i];
+				std::vector<std::string> array;
+				if (type[i] == "list")
+				{
+					s = StringOperation::remove_all(StringOperation::trim(split_string[i]), ' ');
+				}
+				
+				array = StringOperation::split(s, ',');
 				arrays.push_back(array);
 			}
 

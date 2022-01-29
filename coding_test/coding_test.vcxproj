@@ -33,6 +33,7 @@
     <ClInclude Include="UtilityLayer.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="N으로표현.txt" />
     <Text Include="보석쇼핑.txt" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

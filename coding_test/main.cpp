@@ -6,7 +6,8 @@ using namespace std;
 int main(void)
 {
 	JewelShopping p;
+	RepN p2;
 
-	p.Solve();
+	p2.Solve();
 	return 0;
 }

@@ -52,5 +52,8 @@
     <Text Include="보석쇼핑.txt">
       <Filter>리소스 파일</Filter>
     </Text>
+    <Text Include="N으로표현.txt">
+      <Filter>리소스 파일</Filter>
+    </Text>
   </ItemGroup>
 </Project>
