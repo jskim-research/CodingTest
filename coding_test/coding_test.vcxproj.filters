@@ -19,6 +19,9 @@
     <Filter Include="소스 파일\SolvedProblems">
       <UniqueIdentifier>{1d632e2d-c598-465f-9c86-543c44539d88}</UniqueIdentifier>
     </Filter>
+    <Filter Include="헤더 파일\Layers">
+      <UniqueIdentifier>{02d7c694-e0e9-41df-a668-bddb98118ebb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -36,12 +39,12 @@
     <ClCompile Include="RepByN.cpp">
       <Filter>소스 파일\SolvedProblems</Filter>
     </ClCompile>
+    <ClCompile Include="LittleFriends.cpp">
+      <Filter>소스 파일\SolvedProblems</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Problem.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="DataStructureLayer.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="ProblemFile.h">
@@ -50,21 +53,33 @@
     <ClInclude Include="StringOperation.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="UtilityLayer.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="JewelShopping.h">
       <Filter>헤더 파일\SolvedProblems</Filter>
     </ClInclude>
     <ClInclude Include="RepByN.h">
       <Filter>헤더 파일\SolvedProblems</Filter>
     </ClInclude>
+    <ClInclude Include="LittleFriends.h">
+      <Filter>헤더 파일\SolvedProblems</Filter>
+    </ClInclude>
+    <ClInclude Include="DataStructureLayer.h">
+      <Filter>헤더 파일\Layers</Filter>
+    </ClInclude>
+    <ClInclude Include="UtilityLayer.h">
+      <Filter>헤더 파일\Layers</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonHeaders.h">
+      <Filter>헤더 파일\Layers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="보석쇼핑.txt">
+    <Text Include="JewelShopping.txt">
       <Filter>리소스 파일</Filter>
     </Text>
-    <Text Include="N으로표현.txt">
+    <Text Include="RepByN.txt">
+      <Filter>리소스 파일</Filter>
+    </Text>
+    <Text Include="LittleFriends.txt">
       <Filter>리소스 파일</Filter>
     </Text>
   </ItemGroup>

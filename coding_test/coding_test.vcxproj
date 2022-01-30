@@ -20,14 +20,17 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="JewelShopping.cpp" />
+    <ClCompile Include="LittleFriends.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Problem.cpp" />
     <ClCompile Include="RepByN.cpp" />
     <ClCompile Include="StringOperation.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CommonHeaders.h" />
     <ClInclude Include="DataStructureLayer.h" />
     <ClInclude Include="JewelShopping.h" />
+    <ClInclude Include="LittleFriends.h" />
     <ClInclude Include="Problem.h" />
     <ClInclude Include="ProblemFile.h" />
     <ClInclude Include="RepByN.h" />
@@ -35,8 +38,9 @@
     <ClInclude Include="UtilityLayer.h" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="N으로표현.txt" />
-    <Text Include="보석쇼핑.txt" />
+    <Text Include="LittleFriends.txt" />
+    <Text Include="RepByN.txt" />
+    <Text Include="JewelShopping.txt" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

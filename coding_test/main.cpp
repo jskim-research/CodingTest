@@ -1,14 +1,15 @@
 #include <iostream>
 #include "JewelShopping.h"
 #include "RepByN.h"
+#include "LittleFriends.h"
 
 using namespace std;
 
 int main(void)
 {
-	JewelShopping p;
-	RepN p2;
+	LittleFriends p;
 
 	p.Solve();
+
 	return 0;
 }

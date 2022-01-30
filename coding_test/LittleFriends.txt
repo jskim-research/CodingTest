@@ -1,0 +1,8 @@
+10	10	["M...M...DU", "....AR...R", "...E..OH.H", ".....O....", ".E..A..Q..", "Q....LL.*.", ".D.N.....U", "GT.T...F..", "....FKS...", "GN....K..S"]	"AEFGHKLMDOQRSTNU"
+3	3	["DBA", "C*A", "CDB"]	"ABCD"
+2	4	["NRYN", "ARYA"]	"RYAN"
+4	4	[".ZI.", "M.**", "MZU.", ".IU."]	"MUZI"
+2	2	["AB", "BA"]	"IMPOSSIBLE"
+6	1	["A", "B", "E", "E", "B", "A"]	"EBA"
+3	3	["AZA", "BZB", "**"]	"ZAB"
+3	3	["A.B", "B.A", "C.C"]	"IMPOSSIBLE"

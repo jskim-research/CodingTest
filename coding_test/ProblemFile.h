@@ -77,7 +77,7 @@ inline void ProgrammersFile::ReadFile(std::string file_name, std::vector<std::st
 				std::vector<std::string> array;
 				if (type[i] == "list")
 				{
-					s = StringOperation::remove_all(StringOperation::trim(split_string[i]), ' ');
+					s = StringOperation::remove_all(StringOperation::remove_all(StringOperation::trim(split_string[i]), ' '), '\"');
 				}
 				
 				array = StringOperation::split(s, ',');

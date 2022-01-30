@@ -1,8 +1,5 @@
 #include "RepByN.h"
-#include "DataStructureLayer.h"
-#include <algorithm>
-#include <functional>
-#include <exception>
+#include "CommonHeaders.h"
 
 using namespace std;
 
@@ -69,7 +66,7 @@ std::vector<int> RepN::calculate(const std::vector<int>& lhs, const std::vector<
 
 void RepN::Solve()
 {
-	file->ReadFile("./N으로표현.txt", { "value", "value", "value" });
+	file->ReadFile("./RepByN.txt", { "value", "value", "value" });
 	vector<vector<string>> inputs = file->GetArrays();
 
 	for (int test_case = 0; test_case < inputs.size(); test_case += 3)

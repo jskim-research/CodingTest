@@ -1,9 +1,5 @@
 #include "JewelShopping.h"
-#include "DataStructureLayer.h"
-#include <algorithm>
-#include <functional>
-#include <exception>
-
+#include "CommonHeaders.h"
 using namespace std;
 
 template <class T>
@@ -25,7 +21,7 @@ int JewelShopping::GetCatNum(const vector<string>& gems)
 
 void JewelShopping::Solve()
 {
-	file->ReadFile("./º¸¼®¼îÇÎ.txt", { "list", "list" });
+	file->ReadFile("./JewelShopping.txt", { "list", "list" });
 
 	vector<vector<string>> arrays = file->GetArrays();
 
