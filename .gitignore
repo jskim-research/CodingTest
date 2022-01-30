@@ -35,4 +35,22 @@
 *.out
 *.app
 
+# Visual studio
+## folders
+Debug/
+Release/
+x64/
+.vs/
+**/Debug/
+**/Release/
+**/x64/
+
+## files
+*.sln
+**/*.vcxproj
+**/*.vcxproj.*
+**/*.i
+**/*.obj
+
+
 # End of https://www.toptal.com/developers/gitignore/api/c++

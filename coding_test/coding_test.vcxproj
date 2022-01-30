@@ -19,16 +19,18 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="JewelShopping.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Problem.cpp" />
-    <ClCompile Include="SolvedProblem.cpp" />
+    <ClCompile Include="RepByN.cpp" />
     <ClCompile Include="StringOperation.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DataStructureLayer.h" />
+    <ClInclude Include="JewelShopping.h" />
     <ClInclude Include="Problem.h" />
     <ClInclude Include="ProblemFile.h" />
-    <ClInclude Include="SolvedProblem.h" />
+    <ClInclude Include="RepByN.h" />
     <ClInclude Include="StringOperation.h" />
     <ClInclude Include="UtilityLayer.h" />
   </ItemGroup>
