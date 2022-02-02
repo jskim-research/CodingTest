@@ -21,7 +21,7 @@ int JewelShopping::GetCatNum(const vector<string>& gems)
 
 void JewelShopping::Solve()
 {
-	file->ReadFile("./JewelShopping.txt", { "list", "list" });
+	file->ReadFile("./JewelShopping.txt", { ProblemFile::Types::List, ProblemFile::Types::List });
 
 	vector<vector<string>> arrays = file->GetArrays();
 

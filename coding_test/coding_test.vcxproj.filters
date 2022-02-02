@@ -42,6 +42,9 @@
     <ClCompile Include="LittleFriends.cpp">
       <Filter>소스 파일\SolvedProblems</Filter>
     </ClCompile>
+    <ClCompile Include="BadUser.cpp">
+      <Filter>소스 파일\SolvedProblems</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Problem.h">
@@ -71,6 +74,9 @@
     <ClInclude Include="CommonHeaders.h">
       <Filter>헤더 파일\Layers</Filter>
     </ClInclude>
+    <ClInclude Include="BadUser.h">
+      <Filter>헤더 파일\SolvedProblems</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="JewelShopping.txt">
@@ -80,6 +86,9 @@
       <Filter>리소스 파일</Filter>
     </Text>
     <Text Include="LittleFriends.txt">
+      <Filter>리소스 파일</Filter>
+    </Text>
+    <Text Include="BadUser.txt">
       <Filter>리소스 파일</Filter>
     </Text>
   </ItemGroup>

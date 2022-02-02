@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BadUser.cpp" />
     <ClCompile Include="JewelShopping.cpp" />
     <ClCompile Include="LittleFriends.cpp" />
     <ClCompile Include="main.cpp" />
@@ -27,6 +28,7 @@
     <ClCompile Include="StringOperation.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BadUser.h" />
     <ClInclude Include="CommonHeaders.h" />
     <ClInclude Include="DataStructureLayer.h" />
     <ClInclude Include="JewelShopping.h" />
@@ -38,6 +40,7 @@
     <ClInclude Include="UtilityLayer.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="BadUser.txt" />
     <Text Include="LittleFriends.txt" />
     <Text Include="RepByN.txt" />
     <Text Include="JewelShopping.txt" />

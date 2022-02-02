@@ -3,13 +3,14 @@
 
 void LittleFriends::Solve()
 {
-	file->ReadFile("./LittleFriends.txt", { "value", "value", "list", "value" });
+	file->ReadFile("./LittleFriends.txt", { ProblemFile::Types::Value, ProblemFile::Types::Value, ProblemFile::Types::List, ProblemFile::Types::Value });
 	vector<vector<string>> inputs = file->GetArrays();
 
 	for (int test_case = 0; test_case < inputs.size(); test_case += 4)
 	{
 		int m = stoi(inputs[test_case][0]);
 		int n = stoi(inputs[test_case + 1][0]);
+		
 		vector<string> board = inputs[test_case + 2];
 		string right_answer = inputs[test_case + 3][0];
 		string answer = "";

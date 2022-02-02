@@ -2,12 +2,13 @@
 #include "JewelShopping.h"
 #include "RepByN.h"
 #include "LittleFriends.h"
+#include "BadUser.h"
 
 using namespace std;
 
 int main(void)
 {
-	LittleFriends p;
+	BadUser p;
 
 	p.Solve();
 

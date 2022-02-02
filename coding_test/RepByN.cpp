@@ -66,7 +66,7 @@ std::vector<int> RepN::calculate(const std::vector<int>& lhs, const std::vector<
 
 void RepN::Solve()
 {
-	file->ReadFile("./RepByN.txt", { "value", "value", "value" });
+	file->ReadFile("./RepByN.txt", { ProblemFile::Types::Value, ProblemFile::Types::Value, ProblemFile::Types::Value });
 	vector<vector<string>> inputs = file->GetArrays();
 
 	for (int test_case = 0; test_case < inputs.size(); test_case += 3)
