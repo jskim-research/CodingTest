@@ -64,54 +64,55 @@ std::vector<int> RepN::calculate(const std::vector<int>& lhs, const std::vector<
 }
 
 
-void RepN::Solve()
+RepN::RepN(FileFormat file_format): ProgrammersProblem(file_format)
 {
-	cout << "Problem [RepN]" << endl;
-	file->ReadFile("./RepByN.txt", { ProblemFile::Types::Value, ProblemFile::Types::Value, ProblemFile::Types::Value });
-	vector<vector<string>> inputs = file->GetArrays();
-	int num_problems = file->GetNumOfProblems();
+}
 
-	for (int test_case = 0; test_case < inputs.size(); test_case += inputs.size() / num_problems)
+std::vector<std::string> RepN::Solve(std::vector<std::vector<std::string>>& input)
+{
+	std::vector<std::string> output;
+
+	
+	int answer = -1;
+	int N = stoi(input[0][0]), number = stoi(input[1][0]);
+	vector<vector<int>> memo;
+	vector<int> tmp;
+	bool bFound = false;
+
+	for (int i = 1; i <= 7; i++)
 	{
-		int answer = -1;
-		int N = stoi(inputs[test_case][0]), number = stoi(inputs[test_case + 1][0]);
-		vector<vector<int>> memo;
-		vector<int> tmp;
-		bool bFound = false;
-
-		for (int i = 1; i <= 7; i++)
+		vector<int> v;
+		int n = MakeNs(N, i);
+		if (n == number)
 		{
-			vector<int> v;
-			int n = MakeNs(N, i);
-			if (n == number)
-			{
-				answer = i;
-			}
-			v.push_back(n);
-			memo.push_back(v);
+			answer = i;
 		}
-
-		for (int i = 2; i <= 7; i++)
-		{
-			if (answer != -1) break;
-			for (int j = 1; j < i; j++)
-			{
-				tmp = calculate(memo[j - 1], memo[i - j - 1], Plus, number, bFound);
-				PushAll(memo[i - 1], tmp);
-				tmp = calculate(memo[j - 1], memo[i - j - 1], Minus, number, bFound);
-				PushAll(memo[i - 1], tmp);
-				tmp = calculate(memo[j - 1], memo[i - j - 1], Divide, number, bFound);
-				PushAll(memo[i - 1], tmp);
-				tmp = calculate(memo[j - 1], memo[i - j - 1], Multiply, number, bFound);
-				PushAll(memo[i - 1], tmp);
-			}
-			if (bFound)
-			{
-				answer = i;
-				break;
-			}
-		}
-
-		cout << "MyAnswer: " << answer << " RightAnswer: " << stoi(inputs[test_case + 2][0]) << endl;
+		v.push_back(n);
+		memo.push_back(v);
 	}
+
+	for (int i = 2; i <= 7; i++)
+	{
+		if (answer != -1) break;
+		for (int j = 1; j < i; j++)
+		{
+			tmp = calculate(memo[j - 1], memo[i - j - 1], Plus, number, bFound);
+			PushAll(memo[i - 1], tmp);
+			tmp = calculate(memo[j - 1], memo[i - j - 1], Minus, number, bFound);
+			PushAll(memo[i - 1], tmp);
+			tmp = calculate(memo[j - 1], memo[i - j - 1], Divide, number, bFound);
+			PushAll(memo[i - 1], tmp);
+			tmp = calculate(memo[j - 1], memo[i - j - 1], Multiply, number, bFound);
+			PushAll(memo[i - 1], tmp);
+		}
+		if (bFound)
+		{
+			answer = i;
+			break;
+		}
+	}
+
+	output.push_back(to_string(answer));
+	
+	return output;
 }

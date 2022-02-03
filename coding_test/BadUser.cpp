@@ -3,42 +3,42 @@
 
 using namespace std;
 
-void BadUser::Solve()
+BadUser::BadUser(FileFormat file_format): ProgrammersProblem(file_format)
 {
-	cout << "Problem [BadUser]" << endl;
-	file->ReadFile("./BadUser.txt", { ProblemFile::Types::List, ProblemFile::Types::List, ProblemFile::Types::Value });
-	vector<vector<string>> arrays = file->GetArrays();
-	int num_problems = file->GetNumOfProblems();
 
-	for (int test_case = 0; test_case < arrays.size(); test_case+= arrays.size() / num_problems)
-	{
-		map<string, bool> selected;
-		vector<string> user_id = arrays[test_case];
-		vector<string> banned_id = arrays[test_case + 1];
-		vector<vector<string>> v;
-		set<string> s;
-		int result = stoi(arrays[test_case + 2][0]);
-		int answer = 0;
+}
+
+std::vector<std::string> BadUser::Solve(std::vector<std::vector<std::string>>& input)
+{
+	std::vector<std::string> output;
+
+	map<string, bool> selected;
+	vector<string> user_id = input[0];
+	vector<string> banned_id = input[1];
+	vector<vector<string>> v;
+	set<string> s;
+	int answer = 0;
 		
-		for (int i = 0; i < user_id.size(); i++)
-			selected[user_id[i]] = false;
+	for (int i = 0; i < user_id.size(); i++)
+		selected[user_id[i]] = false;
 
-		for (int i = 0; i < banned_id.size(); i++)
+	for (int i = 0; i < banned_id.size(); i++)
+	{
+		vector<string> tmp;
+		for (int j = 0; j < user_id.size(); j++)
 		{
-			vector<string> tmp;
-			for (int j = 0; j < user_id.size(); j++)
+			if (Matching(user_id[j], banned_id[i]))
 			{
-				if (Matching(user_id[j], banned_id[i]))
-				{
-					tmp.push_back(user_id[j]);
-				}
+				tmp.push_back(user_id[j]);
 			}
-			v.push_back(tmp);
 		}
-
-		answer = GetNumCases(selected, v, 0, s);
-		cout << "MyAnswer: " << s.size() << " RightAnswer: " << result << endl;
+		v.push_back(tmp);
 	}
+
+	GetNumCases(selected, v, 0, s);
+	output.push_back(to_string(s.size()));
+	
+	return output;
 }
 
 bool BadUser::Matching(const std::string& s1, const std::string& s2) const

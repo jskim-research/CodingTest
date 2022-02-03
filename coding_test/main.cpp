@@ -8,15 +8,15 @@ using namespace std;
 
 int main(void)
 {
-	BadUser p1;
-	JewelShopping p2;
-	RepN p3;
-	LittleFriends p4;
+	BadUser p1(FileFormat("./BadUser.txt", { FileFormat::Types::List, FileFormat::Types::List, FileFormat::Types::Value }));
+	JewelShopping p2(FileFormat("./JewelShopping.txt", { FileFormat::Types::List, FileFormat::Types::List }));
+	RepN p3(FileFormat("./RepByN.txt", { FileFormat::Types::Value, FileFormat::Types::Value, FileFormat::Types::Value }));
+	LittleFriends p4(FileFormat("./LittleFriends.txt", { FileFormat::Types::Value, FileFormat::Types::Value, FileFormat::Types::List, FileFormat::Types::Value }));
 
-	p1.Solve();
-	p2.Solve();
-	p3.Solve();
-	p4.Solve();
+	p1.Run();
+	p2.Run();
+	p3.Run();
+	p4.Run();
 
 	return 0;
 }

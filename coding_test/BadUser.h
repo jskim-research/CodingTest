@@ -9,10 +9,11 @@
 https://programmers.co.kr/learn/courses/30/lessons/64064
 */
 
-class BadUser : ProgrammersProblem
+class BadUser : public ProgrammersProblem
 {
 public:
-	void Solve() override;
+	BadUser(FileFormat file_format);
+	std::vector<std::string> Solve(std::vector<std::vector<std::string>>& input) override;
 	bool Matching(const std::string& s1, const std::string& s2) const;
 	int GetNumCases(std::map<std::string, bool>& selected, const std::vector<std::vector<std::string>> & v, int i, std::set<std::string>& s);
 };

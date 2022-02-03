@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BadUser.cpp" />
+    <ClCompile Include="FileFormat.cpp" />
     <ClCompile Include="JewelShopping.cpp" />
     <ClCompile Include="LittleFriends.cpp" />
     <ClCompile Include="main.cpp" />
@@ -31,6 +32,7 @@
     <ClInclude Include="BadUser.h" />
     <ClInclude Include="CommonHeaders.h" />
     <ClInclude Include="DataStructureLayer.h" />
+    <ClInclude Include="FileFormat.h" />
     <ClInclude Include="JewelShopping.h" />
     <ClInclude Include="LittleFriends.h" />
     <ClInclude Include="Problem.h" />

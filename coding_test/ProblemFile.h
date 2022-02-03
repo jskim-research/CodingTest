@@ -2,6 +2,7 @@
 #include "DataStructureLayer.h"
 #include "UtilityLayer.h"
 #include "StringOperation.h"
+#include "FileFormat.h"
 
 class ProblemFile
 {
@@ -9,12 +10,11 @@ protected:
 	size_t num_of_problems;
 	std::vector<std::vector<std::string>> arrays;
 public:
-	enum Types { List, Value };
 	ProblemFile();
 	virtual ~ProblemFile();
 	size_t GetNumOfProblems() const;
 	std::vector<std::vector<std::string>> GetArrays() const;
-	virtual void ReadFile(std::string file_name, std::vector<Types> type) {}
+	virtual void ReadFile(std::string file_name, std::vector<FileFormat::Types> type) {}
 };
 
 class ProgrammersFile : public ProblemFile
@@ -24,7 +24,7 @@ private:
 public:
 	ProgrammersFile();
 	~ProgrammersFile();
-	void ReadFile(std::string file_name, std::vector<Types> type) override;
+	void ReadFile(std::string file_name, std::vector<FileFormat::Types> type) override;
 };
 
 // template class or inline 인 경우 같은 파일에서 정의까지 해야함.
@@ -58,7 +58,7 @@ inline ProgrammersFile::~ProgrammersFile()
 {
 }
 
-inline void ProgrammersFile::ReadFile(std::string file_name, std::vector<Types> type)
+inline void ProgrammersFile::ReadFile(std::string file_name, std::vector<FileFormat::Types> type)
 {
 	std::fstream ifs;
 	std::string buffer;
@@ -80,7 +80,7 @@ inline void ProgrammersFile::ReadFile(std::string file_name, std::vector<Types> 
  				std::string s = split_string[i];
 				std::vector<std::string> array;
 
-				if (type[i] == Types::List)
+				if (type[i] == FileFormat::Types::List)
 				{
 					s = StringOperation::remove_all(StringOperation::remove_all(StringOperation::trim(split_string[i]), ' '), '\"');
 				}

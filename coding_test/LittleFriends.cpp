@@ -1,56 +1,55 @@
 #include "LittleFriends.h"
 #include "CommonHeaders.h"
 
-void LittleFriends::Solve()
+LittleFriends::LittleFriends(FileFormat file_format): ProgrammersProblem(file_format)
 {
-	cout << "Problem [LittleFriends]" << endl;
-	file->ReadFile("./LittleFriends.txt", { ProblemFile::Types::Value, ProblemFile::Types::Value, ProblemFile::Types::List, ProblemFile::Types::Value });
-	vector<vector<string>> inputs = file->GetArrays();
-	int num_problems = file->GetNumOfProblems();
 
-	for (int test_case = 0; test_case < inputs.size(); test_case += inputs.size() / num_problems)
-	{
-		int m = stoi(inputs[test_case][0]);
-		int n = stoi(inputs[test_case + 1][0]);
+}
+
+std::vector<std::string> LittleFriends::Solve(std::vector<std::vector<std::string>>& input)
+{
+	std::vector<std::string> output;
+
+	int m = stoi(input[0][0]);
+	int n = stoi(input[1][0]);
 		
-		vector<string> board = inputs[test_case + 2];
-		string right_answer = inputs[test_case + 3][0];
-		string answer = "";
+	vector<string> board = input[2];
+	string answer = "";
 
-		map<char, vector<pair<int, int>>> coords;
-		for (int i = 0; i < m; i++)
+	map<char, vector<pair<int, int>>> coords;
+	for (int i = 0; i < m; i++)
+	{
+		for (int j = 0; j < n; j++)
 		{
-			for (int j = 0; j < n; j++)
+			char c = board[i][j];
+			if (c < 'A' || c > 'Z') continue;
+			if (coords.find(c) != coords.end())
 			{
-				char c = board[i][j];
-				if (c < 'A' || c > 'Z') continue;
-				if (coords.find(c) != coords.end())
-				{
-					coords[c].push_back(make_pair(i, j));
-				}
-				else
-				{
-					vector<pair<int, int>> v;
-					v.push_back(make_pair(i, j));
-					coords[c] = v;
-				}
+				coords[c].push_back(make_pair(i, j));
+			}
+			else
+			{
+				vector<pair<int, int>> v;
+				v.push_back(make_pair(i, j));
+				coords[c] = v;
 			}
 		}
-
-		int size = coords.size();
-		for (int i = 0; i < size; i++)
-		{
-			char c = FindMatching(board, coords);
-			if (c == ' ')
-			{
-				answer = "IMPOSSIBLE";
-				break;
-			}
-			answer += c;
-		}
-
-		cout << "MyAnswer: " << answer << " RightAnswer: " << right_answer << endl;
 	}
+
+	int size = coords.size();
+	for (int i = 0; i < size; i++)
+	{
+		char c = FindMatching(board, coords);
+		if (c == ' ')
+		{
+			answer = "IMPOSSIBLE";
+			break;
+		}
+		answer += c;
+	}
+
+	output.push_back(answer);
+	return output;
 }
 
 char LittleFriends::FindMatching(vector<string>& board, map<char, vector<pair<int, int>>>& coords)

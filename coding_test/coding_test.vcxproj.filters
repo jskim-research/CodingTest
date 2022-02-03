@@ -45,6 +45,9 @@
     <ClCompile Include="BadUser.cpp">
       <Filter>소스 파일\SolvedProblems</Filter>
     </ClCompile>
+    <ClCompile Include="FileFormat.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Problem.h">
@@ -76,6 +79,9 @@
     </ClInclude>
     <ClInclude Include="BadUser.h">
       <Filter>헤더 파일\SolvedProblems</Filter>
+    </ClInclude>
+    <ClInclude Include="FileFormat.h">
+      <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

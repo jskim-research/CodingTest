@@ -6,10 +6,11 @@
 https://programmers.co.kr/learn/courses/30/lessons/67258
 */
 
-class JewelShopping : ProgrammersProblem
+class JewelShopping : public ProgrammersProblem
 {
 public:
-	void Solve() override;
+	JewelShopping(FileFormat file_format);
+	std::vector<std::string> Solve(std::vector<std::vector<std::string>>& input) override;
 	int GetCatNum(const std::vector<std::string>& gems);
 
 };
