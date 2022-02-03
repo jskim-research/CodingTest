@@ -21,13 +21,14 @@ int JewelShopping::GetCatNum(const vector<string>& gems)
 
 void JewelShopping::Solve()
 {
+	cout << "Problem [JewelShopping]" << endl;
 	file->ReadFile("./JewelShopping.txt", { ProblemFile::Types::List, ProblemFile::Types::List });
 
 	vector<vector<string>> arrays = file->GetArrays();
+	int num_problems = file->GetNumOfProblems();
 
-	for (int test_case = 0; test_case < arrays.size(); test_case += 2)
+	for (int test_case = 0; test_case < arrays.size(); test_case += arrays.size() / num_problems)
 	{
-		cout << "case: " << test_case / 2 << endl;
 		vector<int> answer;
 		vector<string> gems = arrays[test_case];
 		int start = 0, end = 0, min_start = 1, min_end = gems.size(), min_len = gems.size(), cat_num = GetCatNum(gems);
@@ -67,10 +68,11 @@ void JewelShopping::Solve()
 		answer.push_back(min_start);
 		answer.push_back(min_end);
 
+		cout << "MyAnswer: ";
 		for_each(answer.begin(), answer.end(), Print<int>);
-		cout << endl;
 
 		// size_t°¡ ¸ÂÀ½
+		cout << "RightAnswer: ";
 		for_each(arrays[test_case + 1].begin(), arrays[test_case + 1].end(), Print<string>);
 		cout << endl;
 	}

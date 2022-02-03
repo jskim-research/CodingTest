@@ -8,9 +8,15 @@ using namespace std;
 
 int main(void)
 {
-	BadUser p;
+	BadUser p1;
+	JewelShopping p2;
+	RepN p3;
+	LittleFriends p4;
 
-	p.Solve();
+	p1.Solve();
+	p2.Solve();
+	p3.Solve();
+	p4.Solve();
 
 	return 0;
 }

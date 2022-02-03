@@ -66,10 +66,12 @@ std::vector<int> RepN::calculate(const std::vector<int>& lhs, const std::vector<
 
 void RepN::Solve()
 {
+	cout << "Problem [RepN]" << endl;
 	file->ReadFile("./RepByN.txt", { ProblemFile::Types::Value, ProblemFile::Types::Value, ProblemFile::Types::Value });
 	vector<vector<string>> inputs = file->GetArrays();
+	int num_problems = file->GetNumOfProblems();
 
-	for (int test_case = 0; test_case < inputs.size(); test_case += 3)
+	for (int test_case = 0; test_case < inputs.size(); test_case += inputs.size() / num_problems)
 	{
 		int answer = -1;
 		int N = stoi(inputs[test_case][0]), number = stoi(inputs[test_case + 1][0]);
@@ -110,6 +112,6 @@ void RepN::Solve()
 			}
 		}
 
-		cout << answer << ' ' << stoi(inputs[test_case + 2][0]) << endl;
+		cout << "MyAnswer: " << answer << " RightAnswer: " << stoi(inputs[test_case + 2][0]) << endl;
 	}
 }

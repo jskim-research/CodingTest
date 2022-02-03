@@ -71,6 +71,9 @@ inline void ProgrammersFile::ReadFile(std::string file_name, std::vector<Types> 
 		{
 			std::getline(ifs, buffer);
 
+			// 입력이 개행 문자로 나뉜다는 가정
+			this->num_of_problems++;
+
 			std::vector<std::string> split_string = StringOperation::split(buffer, '\t');
 			for (int i = 0; i < split_string.size(); i++)
 			{

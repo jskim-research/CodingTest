@@ -5,10 +5,12 @@ using namespace std;
 
 void BadUser::Solve()
 {
+	cout << "Problem [BadUser]" << endl;
 	file->ReadFile("./BadUser.txt", { ProblemFile::Types::List, ProblemFile::Types::List, ProblemFile::Types::Value });
 	vector<vector<string>> arrays = file->GetArrays();
+	int num_problems = file->GetNumOfProblems();
 
-	for (int test_case = 0; test_case < arrays.size(); test_case+=3)
+	for (int test_case = 0; test_case < arrays.size(); test_case+= arrays.size() / num_problems)
 	{
 		map<string, bool> selected;
 		vector<string> user_id = arrays[test_case];
@@ -35,7 +37,7 @@ void BadUser::Solve()
 		}
 
 		answer = GetNumCases(selected, v, 0, s);
-		cout << s.size() << ' ' << result << endl;
+		cout << "MyAnswer: " << s.size() << " RightAnswer: " << result << endl;
 	}
 }
 

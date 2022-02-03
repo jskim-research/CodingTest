@@ -3,10 +3,12 @@
 
 void LittleFriends::Solve()
 {
+	cout << "Problem [LittleFriends]" << endl;
 	file->ReadFile("./LittleFriends.txt", { ProblemFile::Types::Value, ProblemFile::Types::Value, ProblemFile::Types::List, ProblemFile::Types::Value });
 	vector<vector<string>> inputs = file->GetArrays();
+	int num_problems = file->GetNumOfProblems();
 
-	for (int test_case = 0; test_case < inputs.size(); test_case += 4)
+	for (int test_case = 0; test_case < inputs.size(); test_case += inputs.size() / num_problems)
 	{
 		int m = stoi(inputs[test_case][0]);
 		int n = stoi(inputs[test_case + 1][0]);
@@ -47,7 +49,7 @@ void LittleFriends::Solve()
 			answer += c;
 		}
 
-		cout << answer << ' ' << right_answer << endl;
+		cout << "MyAnswer: " << answer << " RightAnswer: " << right_answer << endl;
 	}
 }
 
